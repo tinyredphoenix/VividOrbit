@@ -5,6 +5,7 @@ import androidx.compose.runtime.Immutable
 @Immutable
 data class ChannelModel(
     val id: String,
+    val systemId: Long, // Used for TvContract EPG queries
     val displayNumber: String,
     val name: String,
     val logoPath: String? = null

@@ -80,7 +80,7 @@ fun PreviewGuideContextActions() {
 fun PreviewPlaybackOSD() {
     Box(modifier = Modifier.fillMaxSize()) {
         PlaybackOSD(
-            currentChannel = ChannelModel("ch_1", "101", "Star Movies", null),
+            currentChannel = ChannelModel("ch_1", 1L, "101", "Star Movies", null),
             currentProgram = MockDataGenerator.generateMockGuideData().second.values.first().first(),
             modifier = Modifier.align(Alignment.BottomStart)
         )
@@ -93,7 +93,7 @@ fun PreviewNumericEntry() {
     Box(modifier = Modifier.fillMaxSize()) {
         NumericChannelEntry(
             enteredDigits = "101",
-            resolvedChannel = ChannelModel("ch_1", "101", "Star Movies", null),
+            resolvedChannel = ChannelModel("ch_1", 1L, "101", "Star Movies", null),
             modifier = Modifier.align(Alignment.TopEnd).padding(48.dp)
         )
     }

@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.weight
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -20,8 +19,6 @@ fun GuideCoordinator(
     uiState: GuideUiState,
     modifier: Modifier = Modifier
 ) {
-    val focusEngine = remember { GuideFocusEngine() }
-
     Column(modifier = modifier.fillMaxSize()) {
         GuideTimeline(
             modifier = Modifier.fillMaxWidth()

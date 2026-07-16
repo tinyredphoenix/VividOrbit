@@ -10,6 +10,12 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import com.custom.dth.ui.features.guide.overlays.CategoryPanel
 import com.custom.dth.ui.features.settings.SettingsList
+import com.custom.dth.ui.features.search.SearchOverlay
+import com.custom.dth.ui.features.playback.overlays.AudioTrackSelector
+import com.custom.dth.ui.features.guide.overlays.ChannelManagementOverlay
+import com.custom.dth.ui.features.settings.ImportExportOverlay
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 
 /**
  * Root container for presenting Overlays.
@@ -45,7 +51,11 @@ fun OverlayContainer(
             enter = slideInHorizontally(initialOffsetX = { -it }),
             exit = slideOutHorizontally(targetOffsetX = { -it })
         ) {
-            CategoryPanel()
+            CategoryPanel(
+                categories = emptyList(),
+                onCategoryFocused = {},
+                onCloseRequested = { overlayManager.pop() }
+            )
         }
         
         // Example: Settings Panel slides from right
@@ -54,7 +64,50 @@ fun OverlayContainer(
             enter = slideInHorizontally(initialOffsetX = { it }),
             exit = slideOutHorizontally(targetOffsetX = { it })
         ) {
-            SettingsList()
+            SettingsList(
+                settingsCategories = emptyList(),
+                onCategorySelected = {}
+            )
+        }
+        
+        AnimatedVisibility(
+            visible = overlayManager.isVisible(OverlayType.SEARCH),
+            enter = fadeIn(),
+            exit = fadeOut()
+        ) {
+            SearchOverlay(
+                onCloseRequested = { overlayManager.pop() }
+            )
+        }
+        
+        AnimatedVisibility(
+            visible = overlayManager.isVisible(OverlayType.AUDIO_TRACK_SELECTOR),
+            enter = slideInHorizontally(initialOffsetX = { it }),
+            exit = slideOutHorizontally(targetOffsetX = { it })
+        ) {
+            AudioTrackSelector(
+                onCloseRequested = { overlayManager.pop() }
+            )
+        }
+        
+        AnimatedVisibility(
+            visible = overlayManager.isVisible(OverlayType.CHANNEL_MANAGEMENT),
+            enter = fadeIn(),
+            exit = fadeOut()
+        ) {
+            ChannelManagementOverlay(
+                onCloseRequested = { overlayManager.pop() }
+            )
+        }
+        
+        AnimatedVisibility(
+            visible = overlayManager.isVisible(OverlayType.IMPORT_EXPORT),
+            enter = slideInHorizontally(initialOffsetX = { it }),
+            exit = slideOutHorizontally(targetOffsetX = { it })
+        ) {
+            ImportExportOverlay(
+                onCloseRequested = { overlayManager.pop() }
+            )
         }
     }
 }

@@ -19,6 +19,7 @@ object MockDataGenerator {
             channels.add(
                 ChannelModel(
                     id = channelId,
+                    systemId = i.toLong(),
                     displayNumber = String.format("%03d", i),
                     name = "Channel $i",
                     logoPath = if (i % 5 == 0) null else "mock_logo_url" // Missing logo test

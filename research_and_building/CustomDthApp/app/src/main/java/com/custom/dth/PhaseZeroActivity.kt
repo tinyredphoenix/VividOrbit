@@ -12,25 +12,36 @@ import androidx.core.content.ContextCompat
 import com.custom.dth.core.AppEvent
 import com.custom.dth.core.AppRuntime
 import com.custom.dth.playback.PlaybackManager
+import androidx.compose.ui.platform.ComposeView
+import com.custom.dth.data.epg.TvProviderEpgSource
+import com.custom.dth.ui.core.OverlayContainer
+import com.custom.dth.ui.features.guide.GuideViewModel
+import com.custom.dth.ui.features.playback.PlaybackViewModel
+import com.custom.dth.ui.core.TvFocusManager
+import com.custom.dth.ui.core.OverlayManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import com.custom.dth.ui.features.guide.GuideCoordinator
 
 class PhaseZeroActivity : AppCompatActivity() {
-    private lateinit var logTextView: TextView
+    private lateinit var composeView: ComposeView
     private lateinit var tvView: TvView
     
     private lateinit var appRuntime: AppRuntime
     private lateinit var playbackManager: PlaybackManager
     private val scope = CoroutineScope(Dispatchers.Main)
+    
+    private lateinit var guideViewModel: GuideViewModel
+    private lateinit var playbackViewModel: PlaybackViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_phase_zero)
-        logTextView = findViewById(R.id.logTextView)
+        composeView = findViewById(R.id.composeView)
         tvView = findViewById(R.id.tvView)
-
-        appendLog("=== Phase 3+ Modular Initialization ===")
         
         val permissionState = ContextCompat.checkSelfPermission(this, "android.permission.READ_TV_LISTINGS")
         
@@ -53,12 +64,29 @@ class PhaseZeroActivity : AppCompatActivity() {
     }
 
     private fun startApp() {
-        appendLog("Initializing AppRuntime (Hub)...")
         appRuntime = AppRuntime(this)
         
-        appendLog("Initializing PlaybackManager (Spoke)...")
         playbackManager = PlaybackManager(tvView, appRuntime.eventBus, scope) { msg ->
-            appendLog(msg)
+            Log.d("ModularApp", msg)
+        }
+        
+        // Initialize ViewModels
+        val epgSource = TvProviderEpgSource(this)
+        guideViewModel = GuideViewModel(appRuntime.channelRepository, epgSource)
+        playbackViewModel = PlaybackViewModel(appRuntime.eventBus, epgSource, appRuntime.channelRepository)
+        
+        // Bind Compose UI
+        composeView.setContent {
+            val overlayManager = androidx.compose.runtime.remember { OverlayManager() }
+            val focusManager = com.custom.dth.ui.core.rememberTvFocusManager()
+            
+            OverlayContainer(
+                overlayManager = overlayManager,
+                focusManager = focusManager
+            ) {
+                val uiState by guideViewModel.uiState.collectAsState()
+                GuideCoordinator(uiState = uiState)
+            }
         }
 
         // Forward tuner changes into the Hub
@@ -71,7 +99,7 @@ class PhaseZeroActivity : AppCompatActivity() {
             override fun onChannelChanged(previousChannel: com.custom.dth.aosp_port.Channel?, currentChannel: com.custom.dth.aosp_port.Channel?) {
                 if (currentChannel != null && currentChannel.getId() != com.custom.dth.aosp_port.Channel.INVALID_ID) {
                     val uri = android.media.tv.TvContract.buildChannelUri(currentChannel.getId())
-                    appendLog("Tuner -> Hub: TuneRequested for ${currentChannel.getId()}")
+                    Log.d("ModularApp", "Tuner -> Hub: TuneRequested for ${currentChannel.getId()}")
                     // Emit a TuneRequest instead of tuning directly
                     appRuntime.eventBus.publish(AppEvent.TuneRequested(uri, currentChannel.getId()))
                     // For now, auto-approve since we don't have PinManager active yet
@@ -83,11 +111,11 @@ class PhaseZeroActivity : AppCompatActivity() {
         // Log events passing through the hub
         scope.launch {
             appRuntime.eventBus.events.collect { event ->
-                appendLog("Hub Event: ${event.javaClass.simpleName}")
+                Log.d("ModularApp", "Hub Event: ${event.javaClass.simpleName}")
             }
         }
         
-        appendLog("Starting Runtime...")
+        Log.d("ModularApp", "Starting Runtime...")
         appRuntime.start()
     }
     
@@ -98,21 +126,18 @@ class PhaseZeroActivity : AppCompatActivity() {
         
         when (keyCode) {
             KeyEvent.KEYCODE_DPAD_UP -> {
-                appendLog("DPAD_UP -> Hub ZapUp")
+                Log.d("ModularApp", "DPAD_UP -> Hub ZapUp")
                 appRuntime.eventBus.publish(AppEvent.ZapUp)
                 return true
             }
             KeyEvent.KEYCODE_DPAD_DOWN -> {
-                appendLog("DPAD_DOWN -> Hub ZapDown")
+                Log.d("ModularApp", "DPAD_DOWN -> Hub ZapDown")
                 appRuntime.eventBus.publish(AppEvent.ZapDown)
                 return true
             }
             KeyEvent.KEYCODE_DPAD_CENTER, KeyEvent.KEYCODE_ENTER -> {
-                val tracks = playbackManager.getAudioTracks()
-                appendLog("Audio tracks available: ${tracks.size}")
-                tracks.forEach {
-                    appendLog(" - Track: ${it.id} (${it.language})")
-                }
+                Log.d("ModularApp", "ENTER -> Hub OpenMenu")
+                appRuntime.eventBus.publish(AppEvent.OpenMenu)
                 return true
             }
         }
@@ -127,9 +152,6 @@ class PhaseZeroActivity : AppCompatActivity() {
     }
 
     private fun appendLog(msg: String) {
-        runOnUiThread {
-            Log.d("ModularApp", msg)
-            logTextView.append("$msg\n")
-        }
+        Log.d("ModularApp", msg)
     }
 }
