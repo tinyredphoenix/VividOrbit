@@ -1,0 +1,397 @@
+--------- beginning of main
+07-16 17:52:54.853  6519  6519 D PhaseZero: === Phase 0 Environment Validation ===
+07-16 17:52:54.876  6519  6566 D PhaseZero: --- 1. TvInputInfo ---
+07-16 17:52:54.876  6519  6566 D PhaseZero: Found 3 inputs
+07-16 17:52:54.886  6519  6566 D PhaseZero: ID: com.brunochanrio.mochitif.tv/com.example.android.sampletvinput.rich.RichTvInputService
+07-16 17:52:54.888  6519  6566 D PhaseZero:   Type: 0
+07-16 17:52:54.888  6519  6566 D PhaseZero:   Label: Sample Rich Input
+07-16 17:52:54.888  6519  6566 D PhaseZero:   ParentId: null
+07-16 17:52:54.928  6519  6566 D PhaseZero: ID: com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19
+07-16 17:52:54.929  6519  6566 D PhaseZero:   Type: 0
+07-16 17:52:54.930  6519  6566 D PhaseZero:   Label: DTVKit2
+07-16 17:52:54.930  6519  6566 D PhaseZero:   ParentId: null
+07-16 17:52:54.930  6519  6566 D PhaseZero:   -> ** CONFIRMED DTH Hardware Tuner **
+07-16 17:52:54.937  6519  6566 D PhaseZero: ID: com.graymatrix.did/com.zee5.androidtv.pmr.live.TvInputService
+07-16 17:52:54.938  6519  6566 D PhaseZero:   Type: 0
+07-16 17:52:54.939  6519  6566 D PhaseZero:   Label: Zee5
+07-16 17:52:54.939  6519  6566 D PhaseZero:   ParentId: null
+07-16 17:52:54.940  6519  6566 D PhaseZero: --- 2. Channels Table for com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19 ---
+07-16 17:52:54.993  6519  6566 D PhaseZero: Total Channels in DB: 705
+07-16 17:52:55.094  6519  6566 D PhaseZero:   Input '' has 3 channels
+07-16 17:52:55.095  6519  6566 D PhaseZero:   Input 'com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19' has 701 channels
+07-16 17:52:55.097  6519  6566 D PhaseZero:   Input 'com.google.android.videos/.tv.usecase.tvinput.playback.TvInputService' has 1 channels
+07-16 17:52:55.097  6519  6566 D PhaseZero: Sample Channel Row 1:
+07-16 17:52:55.101  6519  6566 D PhaseZero:   original_network_id = 0
+07-16 17:52:55.101  6519  6566 D PhaseZero:   description = 
+07-16 17:52:55.102  6519  6566 D PhaseZero:   browsable = 1
+07-16 17:52:55.103  6519  6566 D PhaseZero:   type = TYPE_PREVIEW
+07-16 17:52:55.104  6519  6566 D PhaseZero:   service_id = 0
+07-16 17:52:55.105  6519  6566 D PhaseZero:   internal_provider_id = 0-8-860
+07-16 17:52:55.106  6519  6566 D PhaseZero:   logo = blob/unknown
+07-16 17:52:55.107  6519  6566 D PhaseZero:   locked = 0
+07-16 17:52:55.108  6519  6566 D PhaseZero:   app_link_intent_uri = https://www.zee5.com
+07-16 17:52:55.109  6519  6566 D PhaseZero:   display_name = Recommends
+07-16 17:52:55.110  6519  6566 D PhaseZero:   searchable = 1
+07-16 17:52:55.112  6519  6566 D PhaseZero:   transport_stream_id = 0
+07-16 17:52:55.112  6519  6566 D PhaseZero:   service_type = SERVICE_TYPE_AUDIO_VIDEO
+07-16 17:52:55.114  6519  6566 D PhaseZero:   transient = 0
+07-16 17:52:55.116  6519  6566 D PhaseZero:   package_name = com.graymatrix.did
+07-16 17:52:55.117  6519  6566 D PhaseZero:   _id = 701
+07-16 17:52:55.117  6519  6566 D PhaseZero:   scrambled = 0
+07-16 17:52:55.118  6519  6566 D PhaseZero:   input_id = 
+07-16 17:52:55.129  6519  6566 D PhaseZero: --- 3. Programs Table Check ---
+07-16 17:52:55.224  6519  6566 D PhaseZero: Programs found for channel 715: 87
+07-16 17:52:55.224  6519  6566 D PhaseZero: Sample Program Row 1:
+07-16 17:52:55.225  6519  6566 D PhaseZero:   start_time_utc_millis = 1784030400000
+07-16 17:52:55.226  6519  6566 D PhaseZero:   title = Geeta 2026
+07-16 17:52:55.227  6519  6566 D PhaseZero:   internal_provider_data = blob/unknown
+07-16 17:52:55.227  6519  6566 D PhaseZero:   end_time_utc_millis = 1784032200000
+07-16 17:52:55.228  6519  6566 D PhaseZero:   content_rating = com.android.tv/IN_TV/TV_U
+07-16 17:52:55.228  6519  6566 D PhaseZero:   recording_prohibited = 0
+07-16 17:52:55.229  6519  6566 D PhaseZero:   searchable = 1
+07-16 17:52:55.229  6519  6566 D PhaseZero:   event_id = 0
+07-16 17:52:55.230  6519  6566 D PhaseZero:   package_name = com.droidlogic.dtvkit.inputsource
+07-16 17:52:55.231  6519  6566 D PhaseZero:   _id = 756492
+07-16 17:52:55.232  6519  6566 D PhaseZero:   channel_id = 715
+07-16 17:52:55.235  6519  6566 D PhaseZero: === Validation Complete ===
+07-16 17:52:59.934  6634  6634 D PhaseZero: === Phase 0 Environment Validation ===
+07-16 17:52:59.952  6634  6669 D PhaseZero: --- 1. TvInputInfo ---
+07-16 17:52:59.952  6634  6669 D PhaseZero: Found 3 inputs
+07-16 17:52:59.959  6634  6669 D PhaseZero: ID: com.brunochanrio.mochitif.tv/com.example.android.sampletvinput.rich.RichTvInputService
+07-16 17:52:59.959  6634  6669 D PhaseZero:   Type: 0
+07-16 17:52:59.959  6634  6669 D PhaseZero:   Label: Sample Rich Input
+07-16 17:52:59.960  6634  6669 D PhaseZero:   ParentId: null
+07-16 17:52:59.986  6634  6669 D PhaseZero: ID: com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19
+07-16 17:52:59.986  6634  6669 D PhaseZero:   Type: 0
+07-16 17:52:59.986  6634  6669 D PhaseZero:   Label: DTVKit2
+07-16 17:52:59.987  6634  6669 D PhaseZero:   ParentId: null
+07-16 17:52:59.987  6634  6669 D PhaseZero:   -> ** CONFIRMED DTH Hardware Tuner **
+07-16 17:52:59.992  6634  6669 D PhaseZero: ID: com.graymatrix.did/com.zee5.androidtv.pmr.live.TvInputService
+07-16 17:52:59.992  6634  6669 D PhaseZero:   Type: 0
+07-16 17:52:59.993  6634  6669 D PhaseZero:   Label: Zee5
+07-16 17:52:59.993  6634  6669 D PhaseZero:   ParentId: null
+07-16 17:52:59.994  6634  6669 D PhaseZero: --- 2. Channels Table for com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19 ---
+07-16 17:53:00.023  6634  6669 D PhaseZero: Total Channels in DB: 705
+07-16 17:53:00.060  6634  6669 D PhaseZero:   Input '' has 3 channels
+07-16 17:53:00.060  6634  6669 D PhaseZero:   Input 'com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19' has 701 channels
+07-16 17:53:00.061  6634  6669 D PhaseZero:   Input 'com.google.android.videos/.tv.usecase.tvinput.playback.TvInputService' has 1 channels
+07-16 17:53:00.061  6634  6669 D PhaseZero: Sample Channel Row 1:
+07-16 17:53:00.061  6634  6669 D PhaseZero:   original_network_id = 0
+07-16 17:53:00.061  6634  6669 D PhaseZero:   description = 
+07-16 17:53:00.062  6634  6669 D PhaseZero:   browsable = 1
+07-16 17:53:00.062  6634  6669 D PhaseZero:   type = TYPE_PREVIEW
+07-16 17:53:00.062  6634  6669 D PhaseZero:   service_id = 0
+07-16 17:53:00.063  6634  6669 D PhaseZero:   internal_provider_id = 0-8-860
+07-16 17:53:00.063  6634  6669 D PhaseZero:   logo = blob/unknown
+07-16 17:53:00.064  6634  6669 D PhaseZero:   locked = 0
+07-16 17:53:00.064  6634  6669 D PhaseZero:   app_link_intent_uri = https://www.zee5.com
+07-16 17:53:00.064  6634  6669 D PhaseZero:   display_name = Recommends
+07-16 17:53:00.064  6634  6669 D PhaseZero:   searchable = 1
+07-16 17:53:00.065  6634  6669 D PhaseZero:   transport_stream_id = 0
+07-16 17:53:00.065  6634  6669 D PhaseZero:   service_type = SERVICE_TYPE_AUDIO_VIDEO
+07-16 17:53:00.066  6634  6669 D PhaseZero:   transient = 0
+07-16 17:53:00.066  6634  6669 D PhaseZero:   package_name = com.graymatrix.did
+07-16 17:53:00.067  6634  6669 D PhaseZero:   _id = 701
+07-16 17:53:00.067  6634  6669 D PhaseZero:   scrambled = 0
+07-16 17:53:00.067  6634  6669 D PhaseZero:   input_id = 
+07-16 17:53:00.074  6634  6669 D PhaseZero: --- 3. Programs Table Check ---
+07-16 17:53:00.096  6634  6669 D PhaseZero: Programs found for channel 715: 87
+07-16 17:53:00.096  6634  6669 D PhaseZero: Sample Program Row 1:
+07-16 17:53:00.096  6634  6669 D PhaseZero:   start_time_utc_millis = 1784030400000
+07-16 17:53:00.097  6634  6669 D PhaseZero:   title = Geeta 2026
+07-16 17:53:00.097  6634  6669 D PhaseZero:   internal_provider_data = blob/unknown
+07-16 17:53:00.098  6634  6669 D PhaseZero:   end_time_utc_millis = 1784032200000
+07-16 17:53:00.098  6634  6669 D PhaseZero:   content_rating = com.android.tv/IN_TV/TV_U
+07-16 17:53:00.098  6634  6669 D PhaseZero:   recording_prohibited = 0
+07-16 17:53:00.099  6634  6669 D PhaseZero:   searchable = 1
+07-16 17:53:00.099  6634  6669 D PhaseZero:   event_id = 0
+07-16 17:53:00.100  6634  6669 D PhaseZero:   package_name = com.droidlogic.dtvkit.inputsource
+07-16 17:53:00.100  6634  6669 D PhaseZero:   _id = 756492
+07-16 17:53:00.100  6634  6669 D PhaseZero:   channel_id = 715
+07-16 17:53:00.103  6634  6669 D PhaseZero: === Validation Complete ===
+07-16 17:53:31.338  6814  6814 D PhaseZero: === Phase 0 Environment Validation ===
+07-16 17:53:31.361  6814  6859 D PhaseZero: --- 1. TvInputInfo ---
+07-16 17:53:31.361  6814  6859 D PhaseZero: Found 3 inputs
+07-16 17:53:31.368  6814  6859 D PhaseZero: ID: com.brunochanrio.mochitif.tv/com.example.android.sampletvinput.rich.RichTvInputService
+07-16 17:53:31.368  6814  6859 D PhaseZero:   Type: 0
+07-16 17:53:31.368  6814  6859 D PhaseZero:   Label: Sample Rich Input
+07-16 17:53:31.368  6814  6859 D PhaseZero:   ParentId: null
+07-16 17:53:31.399  6814  6859 D PhaseZero: ID: com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19
+07-16 17:53:31.399  6814  6859 D PhaseZero:   Type: 0
+07-16 17:53:31.400  6814  6859 D PhaseZero:   Label: DTVKit2
+07-16 17:53:31.400  6814  6859 D PhaseZero:   ParentId: null
+07-16 17:53:31.400  6814  6859 D PhaseZero:   -> ** CONFIRMED DTH Hardware Tuner **
+07-16 17:53:31.409  6814  6859 D PhaseZero: ID: com.graymatrix.did/com.zee5.androidtv.pmr.live.TvInputService
+07-16 17:53:31.409  6814  6859 D PhaseZero:   Type: 0
+07-16 17:53:31.409  6814  6859 D PhaseZero:   Label: Zee5
+07-16 17:53:31.410  6814  6859 D PhaseZero:   ParentId: null
+07-16 17:53:31.410  6814  6859 D PhaseZero: --- 2. Channels Table for com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19 ---
+07-16 17:53:31.553  6814  6859 D PhaseZero: Total Channels in DB: 705
+07-16 17:53:31.788  6814  6859 D PhaseZero:   Input '' has 3 channels
+07-16 17:53:31.797  6814  6859 D PhaseZero:   Input 'com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19' has 701 channels
+07-16 17:53:31.798  6814  6859 D PhaseZero:   Input 'com.google.android.videos/.tv.usecase.tvinput.playback.TvInputService' has 1 channels
+07-16 17:53:31.807  6814  6859 D PhaseZero: Sample Channel Row 1:
+07-16 17:53:31.807  6814  6859 D PhaseZero:   original_network_id = 0
+07-16 17:53:31.808  6814  6859 D PhaseZero:   description = 
+07-16 17:53:31.808  6814  6859 D PhaseZero:   browsable = 1
+07-16 17:53:31.808  6814  6859 D PhaseZero:   type = TYPE_PREVIEW
+07-16 17:53:31.808  6814  6859 D PhaseZero:   service_id = 0
+07-16 17:53:31.809  6814  6859 D PhaseZero:   internal_provider_id = 0-8-860
+07-16 17:53:31.811  6814  6859 D PhaseZero:   logo = blob/unknown
+07-16 17:53:31.815  6814  6859 D PhaseZero:   locked = 0
+07-16 17:53:31.816  6814  6859 D PhaseZero:   app_link_intent_uri = https://www.zee5.com
+07-16 17:53:31.819  6814  6859 D PhaseZero:   display_name = Recommends
+07-16 17:53:31.823  6814  6859 D PhaseZero:   searchable = 1
+07-16 17:53:31.824  6814  6859 D PhaseZero:   transport_stream_id = 0
+07-16 17:53:31.824  6814  6859 D PhaseZero:   service_type = SERVICE_TYPE_AUDIO_VIDEO
+07-16 17:53:31.825  6814  6859 D PhaseZero:   transient = 0
+07-16 17:53:31.825  6814  6859 D PhaseZero:   package_name = com.graymatrix.did
+07-16 17:53:31.825  6814  6859 D PhaseZero:   _id = 701
+07-16 17:53:31.826  6814  6859 D PhaseZero:   scrambled = 0
+07-16 17:53:31.826  6814  6859 D PhaseZero:   input_id = 
+07-16 17:53:31.864  6814  6859 D PhaseZero: --- 3. Programs Table Check ---
+07-16 17:53:31.926  6814  6859 D PhaseZero: Programs found for channel 715: 87
+07-16 17:53:31.926  6814  6859 D PhaseZero: Sample Program Row 1:
+07-16 17:53:31.927  6814  6859 D PhaseZero:   start_time_utc_millis = 1784030400000
+07-16 17:53:31.927  6814  6859 D PhaseZero:   title = Geeta 2026
+07-16 17:53:31.928  6814  6859 D PhaseZero:   internal_provider_data = blob/unknown
+07-16 17:53:31.928  6814  6859 D PhaseZero:   end_time_utc_millis = 1784032200000
+07-16 17:53:31.928  6814  6859 D PhaseZero:   content_rating = com.android.tv/IN_TV/TV_U
+07-16 17:53:31.929  6814  6859 D PhaseZero:   recording_prohibited = 0
+07-16 17:53:31.929  6814  6859 D PhaseZero:   searchable = 1
+07-16 17:53:31.929  6814  6859 D PhaseZero:   event_id = 0
+07-16 17:53:31.930  6814  6859 D PhaseZero:   package_name = com.droidlogic.dtvkit.inputsource
+07-16 17:53:31.946  6814  6859 D PhaseZero:   _id = 756492
+07-16 17:53:31.949  6814  6859 D PhaseZero:   channel_id = 715
+07-16 17:53:31.954  6814  6859 D PhaseZero: === Validation Complete ===
+07-16 17:53:36.254  6922  6922 D PhaseZero: === Phase 0 Environment Validation ===
+07-16 17:53:36.269  6922  6943 D PhaseZero: --- 1. TvInputInfo ---
+07-16 17:53:36.269  6922  6943 D PhaseZero: Found 3 inputs
+07-16 17:53:36.275  6922  6943 D PhaseZero: ID: com.brunochanrio.mochitif.tv/com.example.android.sampletvinput.rich.RichTvInputService
+07-16 17:53:36.275  6922  6943 D PhaseZero:   Type: 0
+07-16 17:53:36.276  6922  6943 D PhaseZero:   Label: Sample Rich Input
+07-16 17:53:36.276  6922  6943 D PhaseZero:   ParentId: null
+07-16 17:53:36.299  6922  6943 D PhaseZero: ID: com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19
+07-16 17:53:36.299  6922  6943 D PhaseZero:   Type: 0
+07-16 17:53:36.299  6922  6943 D PhaseZero:   Label: DTVKit2
+07-16 17:53:36.300  6922  6943 D PhaseZero:   ParentId: null
+07-16 17:53:36.300  6922  6943 D PhaseZero:   -> ** CONFIRMED DTH Hardware Tuner **
+07-16 17:53:36.306  6922  6943 D PhaseZero: ID: com.graymatrix.did/com.zee5.androidtv.pmr.live.TvInputService
+07-16 17:53:36.306  6922  6943 D PhaseZero:   Type: 0
+07-16 17:53:36.306  6922  6943 D PhaseZero:   Label: Zee5
+07-16 17:53:36.306  6922  6943 D PhaseZero:   ParentId: null
+07-16 17:53:36.307  6922  6943 D PhaseZero: --- 2. Channels Table for com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19 ---
+07-16 17:53:36.330  6922  6943 D PhaseZero: Total Channels in DB: 705
+07-16 17:53:36.371  6922  6943 D PhaseZero:   Input '' has 3 channels
+07-16 17:53:36.371  6922  6943 D PhaseZero:   Input 'com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19' has 701 channels
+07-16 17:53:36.372  6922  6943 D PhaseZero:   Input 'com.google.android.videos/.tv.usecase.tvinput.playback.TvInputService' has 1 channels
+07-16 17:53:36.372  6922  6943 D PhaseZero: Sample Channel Row 1:
+07-16 17:53:36.372  6922  6943 D PhaseZero:   original_network_id = 0
+07-16 17:53:36.372  6922  6943 D PhaseZero:   description = 
+07-16 17:53:36.372  6922  6943 D PhaseZero:   browsable = 1
+07-16 17:53:36.373  6922  6943 D PhaseZero:   type = TYPE_PREVIEW
+07-16 17:53:36.373  6922  6943 D PhaseZero:   service_id = 0
+07-16 17:53:36.373  6922  6943 D PhaseZero:   internal_provider_id = 0-8-860
+07-16 17:53:36.374  6922  6943 D PhaseZero:   logo = blob/unknown
+07-16 17:53:36.374  6922  6943 D PhaseZero:   locked = 0
+07-16 17:53:36.374  6922  6943 D PhaseZero:   app_link_intent_uri = https://www.zee5.com
+07-16 17:53:36.374  6922  6943 D PhaseZero:   display_name = Recommends
+07-16 17:53:36.375  6922  6943 D PhaseZero:   searchable = 1
+07-16 17:53:36.375  6922  6943 D PhaseZero:   transport_stream_id = 0
+07-16 17:53:36.375  6922  6943 D PhaseZero:   service_type = SERVICE_TYPE_AUDIO_VIDEO
+07-16 17:53:36.376  6922  6943 D PhaseZero:   transient = 0
+07-16 17:53:36.376  6922  6943 D PhaseZero:   package_name = com.graymatrix.did
+07-16 17:53:36.376  6922  6943 D PhaseZero:   _id = 701
+07-16 17:53:36.377  6922  6943 D PhaseZero:   scrambled = 0
+07-16 17:53:36.377  6922  6943 D PhaseZero:   input_id = 
+07-16 17:53:36.381  6922  6943 D PhaseZero: --- 3. Programs Table Check ---
+07-16 17:53:36.403  6922  6943 D PhaseZero: Programs found for channel 715: 87
+07-16 17:53:36.403  6922  6943 D PhaseZero: Sample Program Row 1:
+07-16 17:53:36.404  6922  6943 D PhaseZero:   start_time_utc_millis = 1784030400000
+07-16 17:53:36.404  6922  6943 D PhaseZero:   title = Geeta 2026
+07-16 17:53:36.405  6922  6943 D PhaseZero:   internal_provider_data = blob/unknown
+07-16 17:53:36.405  6922  6943 D PhaseZero:   end_time_utc_millis = 1784032200000
+07-16 17:53:36.407  6922  6943 D PhaseZero:   content_rating = com.android.tv/IN_TV/TV_U
+07-16 17:53:36.407  6922  6943 D PhaseZero:   recording_prohibited = 0
+07-16 17:53:36.408  6922  6943 D PhaseZero:   searchable = 1
+07-16 17:53:36.408  6922  6943 D PhaseZero:   event_id = 0
+07-16 17:53:36.408  6922  6943 D PhaseZero:   package_name = com.droidlogic.dtvkit.inputsource
+07-16 17:53:36.409  6922  6943 D PhaseZero:   _id = 756492
+07-16 17:53:36.409  6922  6943 D PhaseZero:   channel_id = 715
+07-16 17:53:36.411  6922  6943 D PhaseZero: === Validation Complete ===
+07-16 17:54:08.127  7097  7097 D PhaseZero: === Phase 0 Environment Validation ===
+07-16 17:54:08.129  7097  7097 D PhaseZero: Initial permission state READ_TV_LISTINGS: DENIED
+07-16 17:54:08.130  7097  7097 D PhaseZero: Requesting READ_TV_LISTINGS permission...
+07-16 17:54:11.801  7097  7097 D PhaseZero: Permission GRANTED. Proceeding...
+07-16 17:54:11.879  7097  7221 D PhaseZero: --- 1. TvInputInfo ---
+07-16 17:54:11.880  7097  7221 D PhaseZero: Found 3 inputs
+07-16 17:54:11.895  7097  7221 D PhaseZero: ID: com.brunochanrio.mochitif.tv/com.example.android.sampletvinput.rich.RichTvInputService
+07-16 17:54:11.895  7097  7221 D PhaseZero:   Type: 0
+07-16 17:54:11.896  7097  7221 D PhaseZero:   Label: Sample Rich Input
+07-16 17:54:11.896  7097  7221 D PhaseZero:   ParentId: null
+07-16 17:54:11.916  7097  7221 D PhaseZero: ID: com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19
+07-16 17:54:11.916  7097  7221 D PhaseZero:   Type: 0
+07-16 17:54:11.917  7097  7221 D PhaseZero:   Label: DTVKit2
+07-16 17:54:11.917  7097  7221 D PhaseZero:   ParentId: null
+07-16 17:54:11.917  7097  7221 D PhaseZero:   -> ** CONFIRMED DTH Hardware Tuner **
+07-16 17:54:13.367  7270  7270 D PhaseZero: === Phase 0 Environment Validation ===
+07-16 17:54:13.369  7270  7270 D PhaseZero: Initial permission state READ_TV_LISTINGS: GRANTED
+07-16 17:54:13.389  7270  7304 D PhaseZero: --- 1. TvInputInfo ---
+07-16 17:54:13.389  7270  7304 D PhaseZero: Found 3 inputs
+07-16 17:54:13.402  7270  7304 D PhaseZero: ID: com.brunochanrio.mochitif.tv/com.example.android.sampletvinput.rich.RichTvInputService
+07-16 17:54:13.403  7270  7304 D PhaseZero:   Type: 0
+07-16 17:54:13.403  7270  7304 D PhaseZero:   Label: Sample Rich Input
+07-16 17:54:13.404  7270  7304 D PhaseZero:   ParentId: null
+07-16 17:54:13.433  7270  7304 D PhaseZero: ID: com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19
+07-16 17:54:13.434  7270  7304 D PhaseZero:   Type: 0
+07-16 17:54:13.434  7270  7304 D PhaseZero:   Label: DTVKit2
+07-16 17:54:13.434  7270  7304 D PhaseZero:   ParentId: null
+07-16 17:54:13.434  7270  7304 D PhaseZero:   -> ** CONFIRMED DTH Hardware Tuner **
+07-16 17:54:13.442  7270  7304 D PhaseZero: ID: com.graymatrix.did/com.zee5.androidtv.pmr.live.TvInputService
+07-16 17:54:13.442  7270  7304 D PhaseZero:   Type: 0
+07-16 17:54:13.442  7270  7304 D PhaseZero:   Label: Zee5
+07-16 17:54:13.442  7270  7304 D PhaseZero:   ParentId: null
+07-16 17:54:13.443  7270  7304 D PhaseZero: --- 2. Channels Table for com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19 ---
+07-16 17:54:13.485  7270  7304 D PhaseZero: Total Channels in DB: 705
+07-16 17:54:13.532  7270  7304 D PhaseZero:   Input '' has 3 channels
+07-16 17:54:13.532  7270  7304 D PhaseZero:   Input 'com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19' has 701 channels
+07-16 17:54:13.532  7270  7304 D PhaseZero:   Input 'com.google.android.videos/.tv.usecase.tvinput.playback.TvInputService' has 1 channels
+07-16 17:54:13.532  7270  7304 D PhaseZero: Sample Channel Row 1:
+07-16 17:54:13.533  7270  7304 D PhaseZero:   original_network_id = 0
+07-16 17:54:13.533  7270  7304 D PhaseZero:   description = 
+07-16 17:54:13.533  7270  7304 D PhaseZero:   browsable = 1
+07-16 17:54:13.534  7270  7304 D PhaseZero:   type = TYPE_PREVIEW
+07-16 17:54:13.534  7270  7304 D PhaseZero:   service_id = 0
+07-16 17:54:13.535  7270  7304 D PhaseZero:   internal_provider_id = 0-8-860
+07-16 17:54:13.536  7270  7304 D PhaseZero:   logo = blob/unknown
+07-16 17:54:13.536  7270  7304 D PhaseZero:   locked = 0
+07-16 17:54:13.536  7270  7304 D PhaseZero:   app_link_intent_uri = https://www.zee5.com
+07-16 17:54:13.537  7270  7304 D PhaseZero:   display_name = Recommends
+07-16 17:54:13.537  7270  7304 D PhaseZero:   searchable = 1
+07-16 17:54:13.537  7270  7304 D PhaseZero:   transport_stream_id = 0
+07-16 17:54:13.538  7270  7304 D PhaseZero:   service_type = SERVICE_TYPE_AUDIO_VIDEO
+07-16 17:54:13.538  7270  7304 D PhaseZero:   transient = 0
+07-16 17:54:13.539  7270  7304 D PhaseZero:   package_name = com.graymatrix.did
+07-16 17:54:13.539  7270  7304 D PhaseZero:   _id = 701
+07-16 17:54:13.539  7270  7304 D PhaseZero:   scrambled = 0
+07-16 17:54:13.540  7270  7304 D PhaseZero:   input_id = 
+07-16 17:54:13.543  7270  7304 D PhaseZero: --- 4. Real DTVKit Channels Verification ---
+07-16 17:54:13.547  7270  7304 D PhaseZero: ERROR: Selection not allowed for content://android.media.tv/channel
+07-16 17:54:13.570  7270  7304 E PhaseZero: Error in validation
+07-16 17:54:13.570  7270  7304 E PhaseZero: java.lang.SecurityException: Selection not allowed for content://android.media.tv/channel
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:2448)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at android.os.Parcel.createException(Parcel.java:2432)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at android.os.Parcel.readException(Parcel.java:2415)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at android.database.DatabaseUtils.readExceptionFromParcel(DatabaseUtils.java:190)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at android.database.DatabaseUtils.readExceptionFromParcel(DatabaseUtils.java:142)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at android.content.ContentProviderProxy.query(ContentProviderNative.java:481)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at android.content.ContentResolver.query(ContentResolver.java:1219)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at android.content.ContentResolver.query(ContentResolver.java:1151)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at android.content.ContentResolver.query(ContentResolver.java:1107)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at com.custom.dth.PhaseZeroActivity.runValidation(PhaseZeroActivity.kt:94)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at com.custom.dth.PhaseZeroActivity.startValidationThread$lambda$0(PhaseZeroActivity.kt:51)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at com.custom.dth.PhaseZeroActivity.$r8$lambda$5y_fcnlDhax6N7WEdpEyC6LCPvQ(Unknown Source:0)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at com.custom.dth.PhaseZeroActivity$$ExternalSyntheticLambda1.run(Unknown Source:2)
+07-16 17:54:13.570  7270  7304 E PhaseZero: 	at java.lang.Thread.run(Thread.java:920)
+07-16 17:54:50.045  7478  7478 D PhaseZero: === Phase 0 Environment Validation ===
+07-16 17:54:50.047  7478  7478 D PhaseZero: Initial permission state READ_TV_LISTINGS: GRANTED
+07-16 17:54:50.070  7478  7501 D PhaseZero: --- 1. TvInputInfo ---
+07-16 17:54:50.071  7478  7501 D PhaseZero: Found 3 inputs
+07-16 17:54:50.084  7478  7501 D PhaseZero: ID: com.brunochanrio.mochitif.tv/com.example.android.sampletvinput.rich.RichTvInputService
+07-16 17:54:50.084  7478  7501 D PhaseZero:   Type: 0
+07-16 17:54:50.085  7478  7501 D PhaseZero:   Label: Sample Rich Input
+07-16 17:54:50.085  7478  7501 D PhaseZero:   ParentId: null
+07-16 17:54:50.119  7478  7501 D PhaseZero: ID: com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19
+07-16 17:54:50.119  7478  7501 D PhaseZero:   Type: 0
+07-16 17:54:50.119  7478  7501 D PhaseZero:   Label: DTVKit2
+07-16 17:54:50.120  7478  7501 D PhaseZero:   ParentId: null
+07-16 17:54:50.120  7478  7501 D PhaseZero:   -> ** CONFIRMED DTH Hardware Tuner **
+07-16 17:54:50.133  7478  7501 D PhaseZero: ID: com.graymatrix.did/com.zee5.androidtv.pmr.live.TvInputService
+07-16 17:54:50.134  7478  7501 D PhaseZero:   Type: 0
+07-16 17:54:50.134  7478  7501 D PhaseZero:   Label: Zee5
+07-16 17:54:50.134  7478  7501 D PhaseZero:   ParentId: null
+07-16 17:54:50.135  7478  7501 D PhaseZero: --- 2. Channels Table for com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19 ---
+07-16 17:54:50.180  7478  7501 D PhaseZero: Total Channels in DB: 705
+07-16 17:54:50.227  7478  7501 D PhaseZero:   Input '' has 3 channels
+07-16 17:54:50.228  7478  7501 D PhaseZero:   Input 'com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19' has 701 channels
+07-16 17:54:50.228  7478  7501 D PhaseZero:   Input 'com.google.android.videos/.tv.usecase.tvinput.playback.TvInputService' has 1 channels
+07-16 17:54:50.228  7478  7501 D PhaseZero: Sample Channel Row 1:
+07-16 17:54:50.228  7478  7501 D PhaseZero:   original_network_id = 0
+07-16 17:54:50.228  7478  7501 D PhaseZero:   description = 
+07-16 17:54:50.229  7478  7501 D PhaseZero:   browsable = 1
+07-16 17:54:50.229  7478  7501 D PhaseZero:   type = TYPE_PREVIEW
+07-16 17:54:50.229  7478  7501 D PhaseZero:   service_id = 0
+07-16 17:54:50.230  7478  7501 D PhaseZero:   internal_provider_id = 0-8-860
+07-16 17:54:50.230  7478  7501 D PhaseZero:   logo = blob/unknown
+07-16 17:54:50.231  7478  7501 D PhaseZero:   locked = 0
+07-16 17:54:50.231  7478  7501 D PhaseZero:   app_link_intent_uri = https://www.zee5.com
+07-16 17:54:50.231  7478  7501 D PhaseZero:   display_name = Recommends
+07-16 17:54:50.232  7478  7501 D PhaseZero:   searchable = 1
+07-16 17:54:50.232  7478  7501 D PhaseZero:   transport_stream_id = 0
+07-16 17:54:50.232  7478  7501 D PhaseZero:   service_type = SERVICE_TYPE_AUDIO_VIDEO
+07-16 17:54:50.233  7478  7501 D PhaseZero:   transient = 0
+07-16 17:54:50.233  7478  7501 D PhaseZero:   package_name = com.graymatrix.did
+07-16 17:54:50.234  7478  7501 D PhaseZero:   _id = 701
+07-16 17:54:50.234  7478  7501 D PhaseZero:   scrambled = 0
+07-16 17:54:50.234  7478  7501 D PhaseZero:   input_id = 
+07-16 17:54:50.238  7478  7501 D PhaseZero: --- 4. Real DTVKit Channels Verification ---
+07-16 17:54:50.273  7478  7501 D PhaseZero: Sample Channel 1:
+07-16 17:54:50.273  7478  7501 D PhaseZero:   original_network_id = 172
+07-16 17:54:50.274  7478  7501 D PhaseZero:   transport_stream_id = 1
+07-16 17:54:50.274  7478  7501 D PhaseZero:   service_id = 1590
+07-16 17:54:50.275  7478  7501 D PhaseZero:   display_name = COLORS GUJARATI @ Rs 7
+07-16 17:54:50.275  7478  7501 D PhaseZero:   display_number = 578
+07-16 17:54:50.275  7478  7501 D PhaseZero:   broadcast_genre = null
+07-16 17:54:50.276  7478  7501 D PhaseZero:   logo = null
+07-16 17:54:50.289  7478  7501 D PhaseZero:   -> Programs found for this channel: 87
+07-16 17:54:50.292  7478  7501 D PhaseZero: Sample Channel 2:
+07-16 17:54:50.292  7478  7501 D PhaseZero:   original_network_id = 172
+07-16 17:54:50.293  7478  7501 D PhaseZero:   transport_stream_id = 1
+07-16 17:54:50.293  7478  7501 D PhaseZero:   service_id = 1625
+07-16 17:54:50.294  7478  7501 D PhaseZero:   display_name = Rang @ FREE
+07-16 17:54:50.294  7478  7501 D PhaseZero:   display_number = 633
+07-16 17:54:50.295  7478  7501 D PhaseZero:   broadcast_genre = null
+07-16 17:54:50.295  7478  7501 D PhaseZero:   logo = null
+07-16 17:54:50.314  7478  7501 D PhaseZero:   -> Programs found for this channel: 121
+07-16 17:54:50.319  7478  7501 D PhaseZero: Sample Channel 3:
+07-16 17:54:50.319  7478  7501 D PhaseZero:   original_network_id = 172
+07-16 17:54:50.319  7478  7501 D PhaseZero:   transport_stream_id = 1
+07-16 17:54:50.327  7478  7501 D PhaseZero:   service_id = 2516
+07-16 17:54:50.327  7478  7501 D PhaseZero:   display_name = Polimer TV @ FREE
+07-16 17:54:50.327  7478  7501 D PhaseZero:   display_number = 766
+07-16 17:54:50.328  7478  7501 D PhaseZero:   broadcast_genre = null
+07-16 17:54:50.328  7478  7501 D PhaseZero:   logo = null
+07-16 17:54:50.360  7478  7501 D PhaseZero:   -> Programs found for this channel: 42
+07-16 17:54:50.367  7478  7501 D PhaseZero: Sample Channel 4:
+07-16 17:54:50.368  7478  7501 D PhaseZero:   original_network_id = 172
+07-16 17:54:50.369  7478  7501 D PhaseZero:   transport_stream_id = 1
+07-16 17:54:50.370  7478  7501 D PhaseZero:   service_id = 2531
+07-16 17:54:50.373  7478  7501 D PhaseZero:   display_name = Subhavaartha @ FREE
+07-16 17:54:50.375  7478  7501 D PhaseZero:   display_number = 941
+07-16 17:54:50.377  7478  7501 D PhaseZero:   broadcast_genre = null
+07-16 17:54:50.379  7478  7501 D PhaseZero:   logo = null
+07-16 17:54:50.398  7478  7501 D PhaseZero:   -> Programs found for this channel: 103
+07-16 17:54:50.401  7478  7501 D PhaseZero: Sample Channel 5:
+07-16 17:54:50.401  7478  7501 D PhaseZero:   original_network_id = 172
+07-16 17:54:50.402  7478  7501 D PhaseZero:   transport_stream_id = 1
+07-16 17:54:50.402  7478  7501 D PhaseZero:   service_id = 2584
+07-16 17:54:50.403  7478  7501 D PhaseZero:   display_name = PTC News @ FREE
+07-16 17:54:50.403  7478  7501 D PhaseZero:   display_number = 563
+07-16 17:54:50.404  7478  7501 D PhaseZero:   broadcast_genre = null
+07-16 17:54:50.404  7478  7501 D PhaseZero:   logo = null
+07-16 17:54:50.418  7478  7501 D PhaseZero:   -> Programs found for this channel: 83
+07-16 17:54:50.424  7478  7501 D PhaseZero: --- 3. Programs Table Check ---
+07-16 17:54:50.475  7478  7501 D PhaseZero: Programs found for channel 715: 87
+07-16 17:54:50.476  7478  7501 D PhaseZero: Sample Program Row 1:
+07-16 17:54:50.476  7478  7501 D PhaseZero:   start_time_utc_millis = 1784030400000
+07-16 17:54:50.487  7478  7501 D PhaseZero:   title = Geeta 2026
+07-16 17:54:50.488  7478  7501 D PhaseZero:   internal_provider_data = blob/unknown
+07-16 17:54:50.488  7478  7501 D PhaseZero:   end_time_utc_millis = 1784032200000
+07-16 17:54:50.489  7478  7501 D PhaseZero:   content_rating = com.android.tv/IN_TV/TV_U
+07-16 17:54:50.489  7478  7501 D PhaseZero:   recording_prohibited = 0
+07-16 17:54:50.489  7478  7501 D PhaseZero:   searchable = 1
+07-16 17:54:50.490  7478  7501 D PhaseZero:   event_id = 0
+07-16 17:54:50.490  7478  7501 D PhaseZero:   package_name = com.droidlogic.dtvkit.inputsource
+07-16 17:54:50.491  7478  7501 D PhaseZero:   _id = 756492
+07-16 17:54:50.491  7478  7501 D PhaseZero:   channel_id = 715
+07-16 17:54:50.505  7478  7501 D PhaseZero: === Validation Complete ===

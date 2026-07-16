@@ -1,0 +1,10 @@
+.gradle/
+*.class
+*.apk
+*.log
+**/build/
+.idea/
+*.iml
+research_and_building/aosp-livetv-ref/
+backupsourcetvapp/
+.DS_Store
