@@ -32,6 +32,13 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.3"
+    }
 }
 
 dependencies {
@@ -50,4 +57,18 @@ dependencies {
     
     // Android TV
     implementation("androidx.tvprovider:tvprovider:1.1.0")
+
+    // Compose
+    val composeBom = platform("androidx.compose:compose-bom:2024.02.02")
+    implementation(composeBom)
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    debugImplementation("androidx.compose.ui:ui-tooling")
+    
+    // Activity Compose
+    implementation("androidx.activity:activity-compose:1.8.2")
+    
+    // TV Foundation
+    implementation("androidx.tv:tv-foundation:1.0.0-alpha10")
 }
