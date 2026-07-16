@@ -62,6 +62,27 @@ class ChannelRepository(
         )
         channelMetaDao.insertOrUpdate(currentMeta.copy(isFavorite = isFavorite))
     }
+
+    suspend fun renameChannel(stableKey: String, customName: String) = withContext(Dispatchers.IO) {
+        val currentMeta = channelMetaDao.getChannelMeta(stableKey) ?: ChannelMeta(
+            stableKey = stableKey,
+            assignedNumber = ""
+        )
+        channelMetaDao.insertOrUpdate(currentMeta.copy(customName = customName))
+    }
+
+    fun searchChannels(query: String): Flow<List<MergedChannel>> {
+        val lowerQuery = query.lowercase()
+        return observeChannels().combine(kotlinx.coroutines.flow.flowOf(lowerQuery)) { channels, searchStr ->
+            if (searchStr.isBlank()) {
+                channels
+            } else {
+                channels.filter { 
+                    it.displayName.lowercase().contains(searchStr) || it.displayNumber.contains(searchStr) 
+                }
+            }
+        }
+    }
 }
 
 data class MergedChannel(

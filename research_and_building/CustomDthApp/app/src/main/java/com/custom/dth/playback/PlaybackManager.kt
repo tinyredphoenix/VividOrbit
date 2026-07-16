@@ -6,26 +6,54 @@ import android.media.tv.TvTrackInfo
 import android.media.tv.TvView
 import android.net.Uri
 import android.util.Log
+import com.custom.dth.core.AppEvent
+import com.custom.dth.core.AppEventBus
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 class PlaybackManager(
     private val tvView: TvView,
+    private val eventBus: AppEventBus,
+    private val scope: CoroutineScope,
     private val logCallback: (String) -> Unit
 ) {
     private val TAG = "PlaybackManager"
     private val dtvkitInputId = "com.droidlogic.dtvkit.inputsource/.DtvkitTvInput/HW19"
+    private var currentChannelId: Long = -1
 
     init {
+        scope.launch {
+            eventBus.events.collect { event ->
+                when (event) {
+                    is AppEvent.TuneApproved -> {
+                        currentChannelId = event.channelId
+                        tune(event.channelUri)
+                    }
+                    is AppEvent.StopPlaybackRequested -> {
+                        release()
+                        eventBus.publish(AppEvent.PlaybackStopped)
+                    }
+                    else -> {}
+                }
+            }
+        }
+
         tvView.setCallback(object : TvView.TvInputCallback() {
             override fun onConnectionFailed(inputId: String?) {
                 logCallback("TvView: Connection Failed")
+                eventBus.publish(AppEvent.PlaybackError("Connection Failed"))
             }
 
             override fun onDisconnected(inputId: String?) {
                 logCallback("TvView: Disconnected")
+                eventBus.publish(AppEvent.PlaybackError("Disconnected"))
             }
 
             override fun onVideoAvailable(inputId: String?) {
                 logCallback("TvView: Video Available")
+                if (currentChannelId != -1L) {
+                    eventBus.publish(AppEvent.PlaybackStarted(currentChannelId))
+                }
             }
 
             override fun onVideoUnavailable(inputId: String?, reason: Int) {
@@ -54,24 +82,15 @@ class PlaybackManager(
         })
     }
 
-    /**
-     * Tunes to the specified channel URI.
-     */
-    fun tune(channelUri: Uri) {
+    private fun tune(channelUri: Uri) {
         logCallback("PlaybackManager tuning to: $channelUri")
         tvView.tune(dtvkitInputId, channelUri)
     }
 
-    /**
-     * Lists available audio tracks.
-     */
     fun getAudioTracks(): List<TvTrackInfo> {
         return tvView.getTracks(TvTrackInfo.TYPE_AUDIO) ?: emptyList()
     }
 
-    /**
-     * Selects a specific audio track.
-     */
     fun selectAudioTrack(trackId: String) {
         logCallback("Selecting audio track: $trackId")
         tvView.selectTrack(TvTrackInfo.TYPE_AUDIO, trackId)
